@@ -7,10 +7,15 @@ function Form(props) {
     setSearchEntry(e.target.value);
   }
 
+  function onSubmit(e) {
+    props.handleSubmit(e, props.history, searchEntry);
+    setSearchEntry("");
+  }
+
   return (
     <form 
       className="search-form"
-      onSubmit={e => props.handleSubmit(e, props.history, searchEntry)}
+      onSubmit={onSubmit}
     >
       <input 
         type="text"
