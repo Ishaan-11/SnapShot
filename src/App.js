@@ -32,6 +32,12 @@ function App() {
             <Route exact path="/beach" render={() => <Item searchTerm="beach" />} />
             <Route exact path="/bird" render={() => <Item searchTerm="bird" />} />
             <Route exact path="/food" render={() => <Item searchTerm="food" />} />
+            <Route 
+              path="/search/:searchInput" 
+              render={(props) => (
+                  <Item searchTerm={props.match.params.searchInput} />
+                )}
+            />
             <Route component={NotFound} />
           </Switch>
         </div>
