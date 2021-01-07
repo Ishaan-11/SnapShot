@@ -3,6 +3,7 @@ import PhotoContextProvider from "./context/PhotoContext";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/Header";
 import Item from "./components/Item";
+import NotFound from "./components/NotFound";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/beach" render={() => <Item searchTerm="beach" />} />
             <Route exact path="/bird" render={() => <Item searchTerm="bird" />} />
             <Route exact path="/food" render={() => <Item searchTerm="food" />} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </HashRouter>
