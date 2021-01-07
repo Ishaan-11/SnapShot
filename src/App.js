@@ -20,7 +20,7 @@ function App() {
           <Route 
             render={props => (
               <Header 
-              handleSubmit={handleSubmit}
+                handleSubmit={handleSubmit}
                 history={props.history}
               />
             )} 
