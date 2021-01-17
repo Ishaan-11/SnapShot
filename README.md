@@ -1,5 +1,5 @@
 # Snap Shot
-[Demo of Snap Shot](https://yog9.github.io/SnapShot/)
+[Demo of Snap Shot](https://ishaan11-snapshot.netlify.app)
 
 ![](/snapscout.png)
 
