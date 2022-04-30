@@ -8,33 +8,25 @@ import NotFound from "./components/NotFound";
 function App() {
   return (
     <PhotoContextProvider>
-      <HashRouter basename="/SnapScout">
+      <HashRouter>
         <div className="container">
-          <Route>
-            <Header handleSubmit={handleSubmit} />
-          </Route>
+          <Header />
           <Routes>
             <Route
               exact
               path="/"
-              render={() => <Navigate to="/mountain" replace />}
+              element={<Navigate to="/mountain" replace />}
             />
-            <Route exact path="/mountain">
-              <Item />
-            </Route>
-            <Route exact path="/beach">
-              <Item />
-            </Route>
-            <Route exact path="/bird">
-              <Item />
-            </Route>
-            <Route exact path="/food">
-              <Item />
-            </Route>
-            <Route path="/search/:searchInput" children={<searchTerm />} />
-            <Route>
-              <NotFound />
-            </Route>
+            <Route
+              exact
+              path="/mountain"
+              element={<Item searchTerm="mountain" />}
+            />
+            <Route exact path="/beach" element={<Item searchTerm="beach" />} />
+            <Route exact path="/bird" element={<Item searchTerm="bird" />} />
+            <Route exact path="/food" element={<Item searchTerm="food" />} />
+            <Route path="/search/:searchInput" element={<Item />} />
+            <Route element={<NotFound />} />
           </Routes>
         </div>
       </HashRouter>

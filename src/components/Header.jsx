@@ -1,22 +1,22 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Form from "./Form";
 import Navigation from "./Navigation";
 
-function Header(props) {
-  let _history = useHistory();
+function Header() {
+  let _navigate = useNavigate();
 
-  function handleSubmit(e, history, searchInput) {
+  const _handleSubmit = (e, navigate, searchInput) => {
     e.preventDefault();
     // e.currentTarget.reset();
     let url = `/search/${searchInput}`;
-    history.push(url);
-  }
+    navigate(url);
+  };
 
   return (
     <div>
       <h1>SnapShot</h1>
-      <Form history={_history} handleSubmit={handleSubmit} />
+      <Form navigate={_navigate} handleSubmit={_handleSubmit} />
       <Navigation />
     </div>
   );

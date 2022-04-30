@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form(props) {
+function Form({ navigate, handleSubmit }) {
   const [searchEntry, setSearchEntry] = useState("");
 
   function updateSearchInput(e) {
@@ -8,16 +8,13 @@ function Form(props) {
   }
 
   function onSubmit(e) {
-    props.handleSubmit(e, props.history, searchEntry);
+    handleSubmit(e, navigate, searchEntry);
     setSearchEntry("");
   }
 
   return (
-    <form 
-      className="search-form"
-      onSubmit={onSubmit}
-    >
-      <input 
+    <form className="search-form" onSubmit={onSubmit}>
+      <input
         type="text"
         name="search"
         placeholder="Search..."
