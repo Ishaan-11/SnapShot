@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useSearchParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Container from "./Container";
 
 function Item({ searchTerm }) {
