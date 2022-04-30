@@ -1,6 +1,6 @@
 import React from "react";
 import PhotoContextProvider from "./context/PhotoContext";
-import { HashRouter, Route, Routes, Redirect } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Item from "./components/Item";
 import NotFound from "./components/NotFound";
@@ -14,7 +14,11 @@ function App() {
             <Header handleSubmit={handleSubmit} />
           </Route>
           <Routes>
-            <Route exact path="/" render={() => <Redirect to="/mountain" />} />
+            <Route
+              exact
+              path="/"
+              render={() => <Navigate to="/mountain" replace />}
+            />
             <Route exact path="/mountain">
               <Item />
             </Route>
