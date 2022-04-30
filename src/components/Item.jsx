@@ -1,11 +1,14 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Container from "./Container";
 
-function Item(props) {
+function Item() {
+  let { searchTerm } = useParams();
+
   return (
     <div>
-      <h2>{props.searchTerm} Pictures</h2>
-      <Container searchTerm={props.searchTerm} />
+      <h2>{searchTerm} Pictures</h2>
+      <Container searchTerm={searchTerm} />
     </div>
   );
 }
